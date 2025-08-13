@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbars globally while maintaining scroll functionality */
+* {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Internet Explorer and Edge */
+  -ms-overflow-style: none;
+}
+
+/* Webkit browsers (Chrome, Safari, newer Edge) */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+*::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* Ensure scrolling still works */
+html, body {
+  overflow: auto;
+}
+
+/* Hide scrollbars for specific elements that might have custom scrolling */
+.overflow-auto,
+.overflow-scroll,
+.overflow-x-auto,
+.overflow-y-auto,
+.overflow-x-scroll,
+.overflow-y-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.overflow-auto::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-x-scroll::-webkit-scrollbar,
+.overflow-y-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for textareas and input fields */
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+textarea::-webkit-scrollbar,
+input[type="text"]::-webkit-scrollbar,
+input[type="email"]::-webkit-scrollbar,
+input[type="password"]::-webkit-scrollbar,
+select::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for any custom scrollable containers */
+.scrollable,
+.scroll-container,
+[data-scroll] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar,
+.scroll-container::-webkit-scrollbar,
+[data-scroll]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Utility class for explicit scrollbar hiding */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars for any iframe or embedded content */
+iframe {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+iframe::-webkit-scrollbar {
+  display: none;
+}
